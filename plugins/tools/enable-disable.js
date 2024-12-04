@@ -68,11 +68,11 @@ exports.default = {
             if (cmd_on.includes(command)) {
                save.global('global.auto_backup = false', 'global.auto_backup = true');
                await m.reply('auto backup database berhasil di aktifkan\nrestarting...')
-             //  reset()
+               reset()
             } else if (cmd_off.includes(command)) {
                save.global('global.auto_backup = true', 'global.auto_backup = false');
                await m.reply('auto backup database berhasil di matikan\nrestarting...')
-              // reset()
+               reset()
             }
          }
          break

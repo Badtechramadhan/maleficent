@@ -1,6 +1,6 @@
 {
   "name": "maleficent-bot",
-  "version": "9.3.3",
+  "version": "9.3.4",
   "description": "Bot Wea Simple Mudah Di Gunakan ",
   "main": "index.js",
   "directories": {
@@ -21,7 +21,7 @@
     "file-type": "16.5.4",
     "fluent-ffmpeg": "2.1.1",
     "form-data": "4.0.0",
-    "utils-mf": "^9.3.3",
+    "utils-mf": "^9.3.4",
     "human-readable": "0.2.1",
     "moment-timezone": "0.5.34",
     "mongo-client-db": "0.0.2",

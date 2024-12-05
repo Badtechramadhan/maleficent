@@ -4,8 +4,7 @@ exports.default = {
    command: ['jadian'],
    start: async (m, {
       conn,
-      participants,
-      Format
+      participants
    }) => {
       const user = participants.map(v => v.id);
       const user_1 = pickRandom(user)

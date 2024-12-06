@@ -15,11 +15,5 @@
   "music": "https://qu.ax/Ajdr.mp3",
   "ram": 800,
   "readme2": "botNumber adalah nomor yang mau di jadikan bot",
-  "botNumber": "62895622022075",
-  "group": {
-    "readme3": "link bisa kalian ganti link group kalian sendiri kalo punya, atau bisa link chanel juga kalo punya, atau bisa di isi dengan link lain , settingan lainya ada di lib/other.js",
-    "link": "https://chat.whatsapp.com/E4k9NwxYyOaDQkNu8hF8nb",
-    "bye": "Bye 🐽\n%user \nHas Left From %subject Group",
-    "welcome": "*Selamat Datang 🐷*\n*%user* \n*Di %subject*\n*Kenalan dulu yuk*\n*Nama:*\n*Umur:*\n*Asal Kota:*\n*Hoby:*\n*Merek HP:*\n"
-  }
+  "botNumber": "62895622022075"
 }

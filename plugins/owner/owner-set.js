@@ -1,7 +1,7 @@
 exports.default = {
    names: ['Owner'],
-   tags: ['set', 'setnamebot', 'setbotname', 'setnameowner', 'setmenu', 'setprefix', 'setnameown', 'setfooter', 'setwm', 'setsosmed', 'setmusic', 'setram', 'ram', 'setlink', 'setlinkgc', 'setgroupmode', 'setgcmode', 'setrespononlygroup', 'setrespononlygc', 'setadreply'],
-   command: ['set', 'setnamebot', 'setbotname', 'setnameowner', 'setmenu', 'setprefix', 'setnameown', 'setfooter', 'setwm', 'setsosmed', 'setmusic', 'setram', 'ram', 'setlink', 'setlinkgc', 'setgroupmode', 'setgcmode', 'setrespononlygroup', 'setrespononlygc', 'setadreply'],
+   tags: ['set', 'setnamebot', 'setbotname', 'setnameowner', 'setmenu', 'setprefix', 'setnameown', 'setfooter', 'setwm', 'setsosmed', 'setmusic', 'setram', 'ram', 'setlink', 'setgroupmode', 'setgcmode', 'setrespononlygroup', 'setrespononlygc', 'setadreply'],
+   command: ['set', 'setnamebot', 'setbotname', 'setnameowner', 'setmenu', 'setprefix', 'setnameown', 'setfooter', 'setwm', 'setsosmed', 'setmusic', 'setram', 'ram', 'setlink', 'setgroupmode', 'setgcmode', 'setrespononlygroup', 'setrespononlygc', 'setadreply'],
    start: async (m, {
       text,
       prefix,
@@ -19,7 +19,7 @@ exports.default = {
          caption += '7 .setmusic \nUntuk mengganti link music \n\n'
          caption += '8 .setram atau .ram \nUntuk mengganti nilai ram \n\n' 
          caption += '9 .setthumb atau setthumbnail atau .sthumb \nUntuk mengganti thumbnail utama bot \n\n'
-         caption += '10 .setlink atau setlinkgc \nUntuk mengganti setting link group\n\n'
+         caption += '10 .setlink \nUntuk mengganti setting link group\n\n'
          caption += '11 .setgroupmode atau .setgcmode\nUntuk mengganti akses bot ke mode group atau keduanya private and group\n\n'
          caption += '12 .setrespononlygroup atau .setrespononlygc\nUntuk mematikan dan mengaktifkan respon message groupOnly\n\n'
          caption += '13 .setadreply\nUntuk mengaktifkan mode pesan dengan thumbnail atau photo'
@@ -59,11 +59,11 @@ exports.default = {
          setting.ram = parseInt(text);
          save_setting();
          await m.reply(`Sukses Mengganti Nilai RAM Menjadi ${text}\n`);         
-      } else if (/setlink|setlinkgc/.test(command)) {
-         if (!text) return m.reply(`Masukan link group nya! \nContoh\n${prefix+command} ${setting.group.link}\nAtau link lain juga bisa`);
-         setting.group.link = text
-         save_setting();
-         await m.reply(`Sukses Mengganti Link Setting Menjadi ${text}\n`);         
+      } else if (/setlink/.test(command)) {
+         if (!text) return m.reply(`Masukan link group nya! \nContoh\n${prefix+command} ${global.link_group}\nAtau link lain juga bisa`);         
+         const link = global.link_group
+         save.global(`global.link_group = '${link}'`, `global.link_group = '${text}'`);
+         await m.reply(`Sukses Mengganti Link Setting Menjadi ${text}`);
       } else if (/setgroupmode|setgcmode/.test(command)) {         
          if (!text) return m.reply(`masukan parameternya contoh \n${prefix+command} on atau off`);
          if (text.toLowerCase() == 'on') {

@@ -12,15 +12,13 @@ exports.default = {
       Format
    }) => {
       if (/image/.test(mime) || m.mtype === 'imageMessage') {
-         let image = await conn.downloadAndSaveMediaMessage(quoted);
+         const image = await conn.downloadAndSaveMediaMessage(quoted);
          m.reply(`Process...`);
-         let link = await Format.upload2(image);
+         const link = await Format.upload2(image);
+         db.settings.cover = link
          setting.thumbnail = link
-         save_setting()
-         await m.reply(`Sukses Mengganti Thumbnail Bot\n\nRestarting....`);
-         setTimeout(() => {
-            process.send('reset');
-         }, 1000);
+         save_setting()         
+         m.reply(`Sukses Mengganti Thumbnail Bot`);         
       } else {
          return m.reply(`Balas Atau Kirim image dengan caption ${prefix+command}`)
       }

@@ -12,6 +12,7 @@ exports.default = {
       caption += `Auto Backup DB: ${global.auto_backup ? y : t}\n`
       caption += `Auto Status Bio: ${db.settings.autobio ? y : t}\n`
       caption += `Auto Read Story: ${db.settings.readsw ? y : t}\n`      
+      caption += `Anti Call: ${global.anticall ? y : t}\n`
       caption += `Group Mode: ${global.group_mode ? y : t}\n`
       caption += `Mess Group Only: ${global.group_only_message ? y : t}\n`
       caption += `AdReply: ${global.adReply ? y : t}\n`
@@ -25,7 +26,7 @@ exports.default = {
       caption += `Recording Private: ${global.recording_private ? y : t}\n`
       caption += `Ram Set: ${setting.ram}\n`
       caption += `Prefix: ${db.settings.prefix}\n\n`
-      caption += `Untuk mengubah pengaturan langsung dari bot owner bisa cek di menu .set`      
+      caption += `Untuk mengubah pengaturan langsung dari bot owner bisa cek di menu .set atau ada juga di menu .on .off`      
       conn.reply(m.chat, caption, m)
    }
 }

@@ -28,7 +28,8 @@ exports.default = {
          if (!text) return m.reply(`Masukan Nama Bot nya! \nContoh\n${prefix+command} Maleficent-bot`);         
          setting.botName = text
          save_setting();
-         await m.reply(`Sukses mengganti nama bot menjadi ${text}\n`);         
+         await m.reply(`Sukses mengganti nama bot menjadi ${text}\nRestarting...`);
+         reset();    
       } else if (/setnameowner|setnameown/.test(command)) {
          if (!text) return m.reply(`Masukan Nama Nya! \nContoh\n${prefix+command} Ruly Henderson`);
          setting.ownerName = text
@@ -38,7 +39,8 @@ exports.default = {
          if (!text) return m.reply(`Masukan nama footer atau watermark nya! \nContoh\n${prefix+command} © Ruhend`);
          setting.footer = text
          save_setting();
-         await m.reply(`Sukses Mengganti Footer atau Watermark Bot Menjadi ${text}\n`);
+         await m.reply(`Sukses Mengganti Footer atau Watermark Bot Menjadi ${text}\nRestarting...`);
+         reset()
       } else if (/setsosmed/.test(command)) {
          if (!text) return m.reply(`Masukan link sosmed nya! \nContoh\n${prefix+command} www.instagram.com/ru_hend_`);
          setting.sosmed = text
@@ -58,7 +60,8 @@ exports.default = {
          if (!text) return m.reply(`Masukan nilai ram nya! \nContoh\n${prefix+command} 800`);
          setting.ram = parseInt(text);
          save_setting();
-         await m.reply(`Sukses Mengganti Nilai RAM Menjadi ${text}\n`);         
+         await m.reply(`Sukses Mengganti Nilai RAM Menjadi ${text}\nRestarting...`);  
+         reset();      
       } else if (/setlink/.test(command)) {
          if (!text) return m.reply(`Masukan link group nya! \nContoh\n${prefix+command} ${global.link_group}\nAtau link lain juga bisa`);         
          const link = global.link_group
